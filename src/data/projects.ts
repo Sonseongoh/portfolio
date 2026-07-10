@@ -44,10 +44,6 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "GitHub", href: "https://github.com/Sonseongoh/EatAndRunWeb" },
-      {
-        label: "결정 기록 (PORTFOLIO.md)",
-        href: "https://github.com/Sonseongoh/EatAndRunWeb/blob/main/docs/PORTFOLIO.md",
-      },
     ],
   },
   {
@@ -79,10 +75,6 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "GitHub", href: "https://github.com/Sonseongoh/footprint" },
-      {
-        label: "결정 기록 (PORTFOLIO.md)",
-        href: "https://github.com/Sonseongoh/footprint/blob/main/docs/PORTFOLIO.md",
-      },
     ],
   },
   {
