@@ -1,3 +1,4 @@
+import GitHubIcon from "@/components/GitHubIcon";
 import { projects, type Project } from "@/data/projects";
 
 const categoryBadge: Record<string, string> = {
@@ -95,17 +96,21 @@ function ProjectCard({ project }: { project: Project }) {
         </details>
 
         <div className="mt-5 flex gap-4 border-t border-gray-800/50 pt-4 text-sm">
-          {project.links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 transition-colors duration-300 hover:text-cyan-300"
-            >
-              {link.label} ↗
-            </a>
-          ))}
+          {project.links.map((link) => {
+            const isGitHub = link.href.includes("github.com");
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-gray-400 transition-colors duration-300 hover:text-cyan-300"
+              >
+                <span>{link.label}</span>
+                {isGitHub ? <GitHubIcon /> : <span>↗</span>}
+              </a>
+            );
+          })}
         </div>
       </div>
     </article>

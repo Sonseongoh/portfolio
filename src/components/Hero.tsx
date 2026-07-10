@@ -1,3 +1,5 @@
+import GitHubIcon from "@/components/GitHubIcon";
+
 const stats = [
   { value: "4+", label: "프로젝트", gradient: "from-cyan-400 to-blue-500" },
   { value: "10+", label: "결정 기록 (ADR)", gradient: "from-purple-400 to-pink-500" },
@@ -69,9 +71,7 @@ export default function Hero() {
               >
                 <span className="flex items-center justify-center space-x-2">
                   <span>GitHub 보기</span>
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    ↗
-                  </span>
+                  <GitHubIcon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                 </span>
               </a>
             </div>
