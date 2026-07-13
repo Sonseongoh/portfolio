@@ -81,12 +81,33 @@ export const projects: Project[] = [
     slug: "photowhale",
     name: "PhotoWhale",
     category: "Web",
-    oneLiner: "TODO: 한 줄 소개 — PDF 포트폴리오의 서사를 여기로 옮기기",
-    problem: "TODO: 어떤 문제를 다르게 봤는지 2~3문장.",
-    stack: [],
-    highlights: [],
-    links: [],
-    wip: true,
+    oneLiner:
+      "이미 갖고 있는 사진으로 브라우저에서 만드는 나만의 인생네컷 — 프레임 편집부터 저장·공유까지 (2인 FE 팀)",
+    problem:
+      "인생네컷은 부스에 가야 하고 그 자리에서 찍은 사진만 쓸 수 있다 — 추억은 부스가 아니라 사진첩에 이미 있는데. 그 제약을 웹으로 뒤집고, 프레임 선택도 '1×3' 같은 규격 숫자가 아니라 결과물의 생김새로 고르게 했다. 만들고 끝이 아니라 다운로드 시도/성공/실패를 각각 계측해 '눌렀는데 안 됐다'가 보이는 구조로 만들었다.",
+    stack: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "GA4", "html-to-image"],
+    highlights: [
+      {
+        title: "Variable Font 최적화를 하루 만에 버린 결정",
+        body: "폰트 용량을 80% 줄인 Variable Font가 특정 OS·GPU·브라우저 조합에서 아예 적용되지 않는 걸 발견하고, 같은 날 static 방식으로 전환했다. 이어서 font preload가 랜딩 이미지와 대역폭을 경쟁하며 LCP를 미는 병목을 찾아 해제 — LCP 950ms → 740ms.",
+      },
+      {
+        title: "프레임 선택: 숫자 옵션 → 시각 프리뷰",
+        body: "'1×3, 2×2' 버튼은 규격을 아는 사람만 읽을 수 있는 UI였다. 인생네컷 사용자는 결과물의 생김새로 고른다고 판단해 프레임 모양 그대로를 선택지로 바꿨다 — 다만 선택률 데이터로 검증하지 못한 가설임을 기록해뒀다.",
+      },
+      {
+        title: "안 되는 버튼은 보여주지 않는다",
+        body: "Web Share API가 동작하지 않는 데스크톱에서 공유 버튼을 보여주고 실패시키는 대신, 모바일 여부와 navigator.share 지원을 판단하는 훅으로 동작하는 환경에서만 노출했다.",
+      },
+      {
+        title: "step 상태를 저장하지 않고 URL에서 파생",
+        body: "페이지마다 useEffect로 진행 단계를 세팅하던 반복을 pathname 파생으로 바꿔 동기화할 상태 자체를 없앴다. '이미 존재하는 사실에서 파생 가능한 값은 저장하지 않는다'는 원칙을 여기서 얻어 이후 프로젝트에도 쓰고 있다.",
+      },
+    ],
+    links: [
+      { label: "GitHub", href: "https://github.com/PHOTOWHALE/PHOTOWHALE" },
+      { label: "Live", href: "https://photowhale.vercel.app/" },
+    ],
   },
   {
     slug: "catchletter",
