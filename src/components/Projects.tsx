@@ -78,7 +78,7 @@ function ProjectCard({ project }: { project: Project }) {
 
         <details className="group/details mt-4">
           <summary className="cursor-pointer select-none text-sm font-semibold text-cyan-400 transition-colors hover:text-cyan-300">
-            결정과 번복의 기록 {project.highlights.length}건
+            주요 의사결정 기록 {project.highlights.length}건
             <span className="ml-1 inline-block transition-transform group-open/details:rotate-90">
               ›
             </span>
