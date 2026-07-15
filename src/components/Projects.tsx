@@ -1,3 +1,4 @@
+import DecisionsDialog from "@/components/DecisionsDialog";
 import GitHubIcon from "@/components/GitHubIcon";
 import { projects, type Project } from "@/data/projects";
 
@@ -76,24 +77,7 @@ function ProjectCard({ project }: { project: Project }) {
           <p className="text-sm leading-relaxed text-gray-300">{project.problem}</p>
         </div>
 
-        <details className="group/details mt-4">
-          <summary className="cursor-pointer select-none text-sm font-semibold text-cyan-400 transition-colors hover:text-cyan-300">
-            주요 의사결정 기록 {project.highlights.length}건
-            <span className="ml-1 inline-block transition-transform group-open/details:rotate-90">
-              ›
-            </span>
-          </summary>
-          <ul className="mt-4 space-y-4 border-l-2 border-cyan-500/30 pl-4">
-            {project.highlights.map((highlight) => (
-              <li key={highlight.title}>
-                <p className="text-sm font-bold text-white">{highlight.title}</p>
-                <p className="mt-1 text-sm leading-relaxed text-gray-400">
-                  {highlight.body}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </details>
+        <DecisionsDialog project={project} initials={initialsOf(project.name)} />
 
         <div className="mt-5 flex gap-4 border-t border-gray-800/50 pt-4 text-sm">
           {project.links.map((link) => {
