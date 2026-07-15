@@ -113,11 +113,32 @@ export const projects: Project[] = [
     slug: "catchletter",
     name: "CatchLetter",
     category: "Web",
-    oneLiner: "TODO: 한 줄 소개 — PDF 포트폴리오의 서사를 여기로 옮기기",
-    problem: "TODO: 어떤 문제를 다르게 봤는지 2~3문장.",
-    stack: [],
-    highlights: [],
-    links: [],
-    wip: true,
+    oneLiner:
+      "그림 정답을 맞혀야 편지를 읽을 수 있는 익명 우체통 — 정답 시도 플로우와 분리 입력 UI 담당 (5인 팀, FE 3)",
+    problem:
+      "메시지 전달을 작은 게임으로 만든 제품에서 '틀리는 경험'의 설계를 맡았다. 무한 시도를 막기 위해 3번 틀리면 3분 잠금 페널티를 두되, 그 끝에 힌트가 도착하게 해 이탈 대신 재시도로 이어지게 했고, 페널티가 새로고침으로 회피되지 않도록 시도 상태를 서버 기준으로 그렸다. 그리고 비밀 편지는 네트워크 탭에서도 비밀이어야 한다 — 편지 데이터 요청 자체를 정답 이후로 잠갔다.",
+    stack: ["React", "Vite", "TypeScript", "Emotion", "TanStack Query", "Zustand", "i18next"],
+    highlights: [
+      {
+        title: "편지 내용이 정답 전에 새고 있었다",
+        body: "정답 여부와 무관하게 편지 데이터가 미리 호출되고 있었다 — UI로는 잠겨 있어도 개발자도구로 내용을 볼 수 있는 상태. TanStack Query의 enabled: isCorrect로 쿼리 실행 자체를 정답 이후로 잠갔다. '안 보여준다'와 '안 보낸다'는 다른 층위다.",
+      },
+      {
+        title: "타이머가 1초마다 화면 전체를 리렌더링",
+        body: "3분 타이머 상태가 페이지 훅에 있어 초가 줄 때마다 페이지 전체가 다시 그려졌다. 타이머를 별도 컴포넌트로 격리해 그 부분만 리렌더링되게 리팩토링 — 자주 바뀌는 상태는 소비하는 최소 범위에 둔다.",
+      },
+      {
+        title: "불변 데이터에 staleTime: Infinity",
+        body: "그림·정답·편지는 한 번 만들어지면 바뀌지 않는데 화면 전환마다 refetch되고 있었다. 정적 데이터로 판단해 staleTime: Infinity + gcTime 30분을 적용, 중복 API 요청을 제거했다(당시 측정 약 66% 감소).",
+      },
+      {
+        title: "분리 입력 인풋과 한글 IME",
+        body: "OTP식 분리 입력 인풋(자동 포커스 이동, 백스페이스 역이동)을 라이브러리 없이 직접 만들며 한글 조합(IME) 처리에 오래 막혔다. 출시 후에도 백스페이스 이슈가 다시 나와 고쳤다 — 완결이 아니라 계속 엣지가 나오는 영역임을 한계로 기록해뒀다.",
+      },
+    ],
+    links: [
+      { label: "GitHub", href: "https://github.com/Catch-Letter/Catch-Letter-FE" },
+      { label: "Live", href: "https://catchletter.kr/" },
+    ],
   },
 ];
