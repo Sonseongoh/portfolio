@@ -1,14 +1,17 @@
 "use client";
 
 import { useRef } from "react";
-import type { Project } from "@/data/projects";
 
 export default function DecisionsDialog({
-  project,
+  name,
   initials,
+  intro,
+  highlights,
 }: {
-  project: Project;
+  name: string;
   initials: string;
+  intro?: string;
+  highlights: { title: string; body: string }[];
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -24,7 +27,7 @@ export default function DecisionsDialog({
         onClick={open}
         className="mt-4 cursor-pointer self-start text-sm font-semibold text-cyan-400 transition-colors hover:text-cyan-300"
       >
-        주요 의사결정 기록 {project.highlights.length}건
+        주요 의사결정 기록 {highlights.length}건
         <span className="ml-1 inline-block">›</span>
       </button>
 
@@ -55,15 +58,18 @@ export default function DecisionsDialog({
                 <span className="text-sm font-black text-cyan-400 sm:text-base">{initials}</span>
               </div>
               <div>
-                <h3 className="text-xl font-black text-white sm:text-2xl">{project.name}</h3>
+                <h3 className="text-xl font-black text-white sm:text-2xl">{name}</h3>
                 <p className="mt-1 text-sm text-gray-400">주요 의사결정 기록</p>
               </div>
             </div>
           </div>
 
           <div className="overflow-y-auto p-6 sm:p-8">
+            {intro && (
+              <p className="mb-6 text-sm leading-relaxed text-gray-300">{intro}</p>
+            )}
             <ul className="space-y-6 border-l-2 border-cyan-500/30 pl-4 sm:pl-5">
-              {project.highlights.map((highlight) => (
+              {highlights.map((highlight) => (
                 <li key={highlight.title}>
                   <p className="font-bold text-white">{highlight.title}</p>
                   <p className="mt-1.5 text-sm leading-relaxed text-gray-400">

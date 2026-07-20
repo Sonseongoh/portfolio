@@ -77,7 +77,11 @@ function ProjectCard({ project }: { project: Project }) {
           <p className="text-sm leading-relaxed text-gray-300">{project.problem}</p>
         </div>
 
-        <DecisionsDialog project={project} initials={initialsOf(project.name)} />
+        <DecisionsDialog
+          name={project.name}
+          initials={initialsOf(project.name)}
+          highlights={project.highlights}
+        />
 
         <div className="mt-5 flex gap-4 border-t border-gray-800/50 pt-4 text-sm">
           {project.links.map((link) => {

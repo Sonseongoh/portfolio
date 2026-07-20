@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import Activities from "@/components/Activities";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <Activities />
         <Contact />
       </main>
       <footer className="border-t border-gray-800/50 py-8 text-center text-sm text-gray-500">

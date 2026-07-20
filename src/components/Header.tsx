@@ -6,6 +6,7 @@ const navLinks = [
   { href: "#top", id: "top", icon: "🏠", label: "Home" },
   { href: "#about", id: "about", icon: "👤", label: "About" },
   { href: "#projects", id: "projects", icon: "💼", label: "Projects" },
+  { href: "#activities", id: "activities", icon: "🏅", label: "Activities" },
 ];
 
 export default function Header() {
@@ -16,7 +17,7 @@ export default function Header() {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
       let current = "top";
-      for (const id of ["about", "projects"]) {
+      for (const id of ["about", "projects", "activities"]) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 120) current = id;
       }
