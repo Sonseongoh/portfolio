@@ -34,8 +34,8 @@ export const activities: Activity[] = [
     initials: "AX",
     summary: "5,300여 명 지원 중 60인 본선 진출",
     points: [
-      "예선: 마이리얼트립이 내보내는 AI 콘텐츠를 배포 전에 검증하는 Codex 플러그인 'mrt-truth-gate' 제작 — LLM 자기평가가 아니라 사실원 대조(장소 실존은 OSM·웹 교차검색, 산술은 결정적 스크립트), 블라인드 11케이스로 recall 91.7%를 직접 측정해 공개",
-      "본선: 탭 30개 조사 노동을 대신하는 '여행 결정 그리드' 제작 — AI 계획을 MyRealTrip Open API·Open-Meteo·KTO 통계 실데이터에 접지 (Python·MCP)",
+      "예선: AI 콘텐츠를 배포 전에 검증하는 플러그인 'mrt-truth-gate' — 사실원 대조 방식, 블라인드 recall 91.7% 측정·공개",
+      "본선: '여행 결정 그리드' — AI 여행 계획을 실데이터(항공가·기후·성수기 통계)에 접지",
     ],
   },
   {
