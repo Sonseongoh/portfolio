@@ -124,7 +124,11 @@ export const projects: Project[] = [
     highlights: [
       {
         title: "Variable Font 최적화를 하루 만에 버린 결정",
-        body: "폰트 용량을 80% 줄인 Variable Font가 특정 OS·GPU·브라우저 조합에서 아예 적용되지 않는 걸 발견하고, 같은 날 static 방식으로 전환했다. 이어서 font preload가 랜딩 이미지와 대역폭을 경쟁하며 LCP를 미는 병목을 찾아 해제 — LCP 950ms → 740ms.",
+        body: "폰트 용량을 80% 이상 줄인 Variable Font가 특정 OS·GPU·브라우저 조합에서 아예 적용되지 않는 걸 발견하고, 같은 날 static 방식으로 전환했다. 최적화 수치보다 '모든 사용자가 같은 화면을 본다'가 우선이라고 판단했다.",
+      },
+      {
+        title: "LCP 병목의 범인이 '최적화'였다",
+        body: "폰트 전환 뒤에도 랜딩 LCP가 기대만큼 안 나와 리소스 로딩 순서를 분석했더니, font preload가 랜딩 이미지와 대역폭을 경쟁하며 LCP를 밀고 있었다. preload를 해제해 LCP 950ms → 740ms(약 22% 개선) — 최적화 기법들은 서로 경쟁하므로 하나씩 켜고 측정해야 한다.",
       },
       {
         title: "프레임 선택: 숫자 옵션 → 시각 프리뷰",
