@@ -34,9 +34,8 @@ export const activities: Activity[] = [
     initials: "AX",
     summary: "5,300여 명 지원 중 60인 본선 진출",
     points: [
-      "기업이 과제를 주지 않는 해커톤에서 'AI의 그럴듯한 출력은 누가 검증하나'를 문제로 정의, 사실원 대조 게이트로 예선 통과",
-      "여행 준비를 '조사 노동'으로 재정의 — 성공 지표는 '계획을 본 순간 구매 확정을 누르고 싶은가' 하나",
-      "Python · MCP · MyRealTrip Open API · Open-Meteo · KTO 통계",
+      "예선: 마이리얼트립이 내보내는 AI 콘텐츠를 배포 전에 검증하는 Codex 플러그인 'mrt-truth-gate' 제작 — LLM 자기평가가 아니라 사실원 대조(장소 실존은 OSM·웹 교차검색, 산술은 결정적 스크립트), 블라인드 11케이스로 recall 91.7%를 직접 측정해 공개",
+      "본선: 탭 30개 조사 노동을 대신하는 '여행 결정 그리드' 제작 — AI 계획을 MyRealTrip Open API·Open-Meteo·KTO 통계 실데이터에 접지 (Python·MCP)",
     ],
   },
   {
