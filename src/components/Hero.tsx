@@ -104,7 +104,7 @@ export default function Hero() {
             <div className="absolute -right-4 -top-5 rounded-xl border border-gray-700/50 bg-gray-900/90 px-4 py-2.5 text-sm shadow-xl backdrop-blur-md">
               🎯 문제 정의 → 완수
             </div>
-            <div className="absolute -left-6 bottom-10 rounded-xl border border-gray-700/50 bg-gray-900/90 px-4 py-2.5 text-sm shadow-xl backdrop-blur-md">
+            <div className="absolute -bottom-6 -left-6 rounded-xl border border-gray-700/50 bg-gray-900/90 px-4 py-2.5 text-sm shadow-xl backdrop-blur-md">
               📝 번복도 기록으로
             </div>
           </div>
